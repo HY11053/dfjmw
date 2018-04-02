@@ -44,8 +44,13 @@
                         <div class="form-group  ">
                             {{Form::label('dirposition', '目录相对位置', array('class' => 'col-sm-2 control-label'))}}
                             <div class="col-sm-5 basic_info">
-                                {{Form::radio('dirposition', '1', true,array('class'=>"flat-red"))}} 站点根目录
+                                @if($typeinfos->dirposition ==1)
+                                {{Form::radio('dirposition', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 站点根目录
                                 {{Form::radio('dirposition', '0',false,array('class'=>"flat-red"))}} 上级目录
+                                @else
+                                    {{Form::radio('dirposition', '1', true,array('class'=>"flat-red"))}} 站点根目录
+                                    {{Form::radio('dirposition', '0',false,array('class'=>"flat-red",'checked'=>'checked'))}} 上级目录
+                                @endif
                             </div>
                         </div>
 
@@ -66,8 +71,13 @@
                         <div class="form-group  ">
                             {{Form::label('mid', '栏目类型', array('class' => 'col-sm-2 control-label'))}}
                             <div class="col-sm-5 basic_info">
-                                {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
+                                @if($typeinfos->mid)
+                                {{Form::radio('mid', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 品牌类型
                                 {{Form::radio('mid', '0',false,array('class'=>"flat-red"))}} 普通文章
+                                @else
+                                {{Form::radio('mid', '1', true,array('class'=>"flat-red"))}} 品牌类型
+                                {{Form::radio('mid', '0',false,array('class'=>"flat-red",'checked'=>'checked'))}} 普通文章
+                                @endif
                             </div>
                         </div>
 
@@ -88,8 +98,13 @@
                         <div class="form-group  ">
                             {{Form::label('is_write', '是否允许发布文档', array('class' => 'col-sm-2 control-label'))}}
                             <div class="col-sm-5 basic_info">
-                                {{Form::radio('is_write', '1', true,array('class'=>"flat-red"))}} 允许
+                                @if($typeinfos->is_write)
+                                {{Form::radio('is_write', '1', true,array('class'=>"flat-red",'checked'=>'checked'))}} 允许
                                 {{Form::radio('is_write', '0',false,array('class'=>"flat-red"))}} 不允许
+                                @else
+                                {{Form::radio('is_write', '1', true,array('class'=>"flat-red"))}} 允许
+                                {{Form::radio('is_write', '0',false,array('class'=>"flat-red",'checked'=>'checked'))}} 不允许
+                                @endif
                             </div>
                         </div>
 

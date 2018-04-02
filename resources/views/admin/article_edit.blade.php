@@ -136,8 +136,13 @@
                             <div class="form-group col-md-12 ">
                                 {{Form::label('ismake', '文章状态', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12'))}}
                                 <div class="radio col-md-4 col-sm-9 col-xs-12">
-                                    {{Form::radio('ismake', '1', true,array('class'=>'flat-red'))}} 已审核
-                                    {{Form::radio('ismake', '0', false,array('class'=>'flat-red'))}}未审核
+                                    @if($articleinfos->ismake)
+                                        {{Form::radio('ismake', '1', true,array('class'=>'flat-red','checked'=>'checked'))}} 已审核
+                                        {{Form::radio('ismake', '0', false,array('class'=>'flat-red'))}}未审核
+                                    @else
+                                        {{Form::radio('ismake', '1', true,array('class'=>'flat-red','checked'=>'checked'))}} 已审核
+                                        {{Form::radio('ismake', '0', false,array('class'=>'flat-red','checked'=>'checked'))}}未审核
+                                    @endif
                                 </div>
 
                             </div>

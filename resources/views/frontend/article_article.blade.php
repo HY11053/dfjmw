@@ -3,8 +3,8 @@
 @section('keywords'){{$thisarticleinfos->keywords}}@stop
 @section('description'){{trim($thisarticleinfos->description)}}@stop
 @section('headlibs')
-    <meta name="Copyright" content="5988创业商机网-{{env('APP_URL')}}"/>
-    <meta name="author" content="5988创业商机网" />
+    <meta name="Copyright" content="东方特许加盟网-{{env('APP_URL')}}"/>
+    <meta name="author" content="东方特许加盟网" />
     <meta http-equiv="mobile-agent" content="format=wml; url={{str_replace('http://zhaji.','http://m.zhaji.',config('app.url'))}}{{Request::getrequesturi()}}" />
     <meta http-equiv="mobile-agent" content="format=xhtml; url={{str_replace('http://zhaji.','http://m.zhaji.',config('app.url'))}}{{Request::getrequesturi()}}" />
     <meta http-equiv="mobile-agent" content="format=html5; url={{str_replace('http://zhaji.','http://m.zhaj.i',config('app.url'))}}{{Request::getrequesturi()}}" />
@@ -12,8 +12,8 @@
     <link rel="canonical" href="{{env('APP_URL')}}{{Request::getrequesturi()}}"/>
     <meta property="og:type" content="article"/>
     <meta property="article:published_time" content="{{$thisarticleinfos->created_at}}+08:00" /> <meta property="og:image" content="{{env('APP_URL')}}{{$thisarticleinfos->litpic}}"/>
-    <meta property="article:author" content="5988创业商机网" />
-    <meta property="article:published_first" content="5988创业商机网, {{env('APP_URL')}}{{Request::getrequesturi()}}" />
+    <meta property="article:author" content="东方特许加盟网" />
+    <meta property="article:published_first" content="东方特许加盟网, {{env('APP_URL')}}{{Request::getrequesturi()}}" />
     <link rel="stylesheet" type="text/css" href="/reception/css/news.css"/>
 @stop
 @section('main_content')
@@ -23,7 +23,7 @@
         <div class="news_center">
             <div class="ny_message">
                 <h1> {{$thisarticleinfos->title}}</h1>
-                <div class="ny_message-js"> 时间：{{$thisarticleinfos->created_at}} <span>来源：5988创业商机网</span> <span>浏览：{{$thisarticleinfos->click}}</span> </div>
+                <div class="ny_message-js"> 时间：{{$thisarticleinfos->created_at}} <span>来源：东方特许加盟网</span> <span>浏览：{{$thisarticleinfos->click}}</span> </div>
             </div>
             <div class="body_tit clearfix">
                 {!! $thisarticleinfos->article->body !!}

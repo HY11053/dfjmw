@@ -13,7 +13,7 @@
     @if(Request::getrequesturi()=='/')
         <title>@yield('title')</title>
     @else
-        <title>@yield('title')-5988创业商机网</title>
+        <title>@yield('title')-东方特许加盟网</title>
     @endif
     <meta name="keywords" content="@yield('keywords')"/>
     <meta name="description" content="@yield('description')"/>
@@ -459,7 +459,7 @@
             <a href="/storage/mobilesitemap.xml">网站地图</a>|<a href="/about/" rel="nofollow">关于我们</a>|<a href="/law/" rel="nofollow">免责声明</a>|<a href="{{env('APP_URL')}}">电脑版</a>
         </div>
         <div class="copyright">
-            <p>5988创业商机网 沪ICP备14037163号-32</p>
+            <p>东方特许加盟网 沪ICP备14037163号-32</p>
             <p>上海佐赛网络科技有限公司</p>
         </div>
     </div>

@@ -16,10 +16,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
                                 @include('admin.layouts.ueditor')
-                                <script id="container" name="body" type="text/plain" style="height:500px" >
+                                <script id="container" name="body" type="text/plain"  >
                                     @if(isset($articleinfos->body))
                                         {!! $articleinfos->body !!}
                                     @endif
@@ -56,68 +55,22 @@
                                 <script type="text/javascript">
                                     var ue2 = UE.getEditor('container2',{
                                         toolbars: [
-                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote','forecolor','backcolor',
-                                                'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage',
-                                                'imageleft',
-                                                'imageright',
-                                                'imagecenter',
-                                                'superscript',
-                                                'subscript',
-                                                'autotypeset',
-                                                'lineheight',
-                                                'pasteplain',
-                                                'selectall',
-                                                'removeformat',
-                                                'formatmatch',
-                                                'cleardoc',
-                                                'rowspacingtop',
-                                                'rowspacingbottom',
-                                                'customstyle',
-                                                'paragraph',
-                                                'fontfamily',
-                                                'fontsize',
-                                                'directionalityltr',
-                                                'directionalityrtl',
-                                                'indent',
-                                                'touppercase', //字母大写
-                                                'tolowercase', //字母小写
-                                                'anchor', //锚点
-                                                'insertvideo','music',
-                                                'insertcode', //代码语言
-                                                'template', //模板
-                                                'horizontal', //分隔线
-                                                'time', //时间
-                                                'date', //日期
-                                                'spechars', //特殊字符
-                                                'inserttable',
-                                                'deletetable', //删除表格
-                                                'insertparagraphbeforetable', //"表格前插入行"
-                                                'insertrow', //前插入行
-                                                'deleterow', //删除行
-                                                'insertcol', //前插入列
-                                                'deletecol', //删除列
-                                                'mergecells', //合并多个单元格
-                                                'mergeright', //右合并单元格
-                                                'mergedown', //下合并单元格
-                                                'splittocells', //完全拆分单元格
-                                                'splittorows', //拆分成行
-                                                'splittocols', //拆分成列
-                                                'charts', // 图表
-                                                'source', //源代码
-                                                'emotion', 'fullscreen']
+                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage','source', //源代码
+                                                'emotion', 'fullscreen','insertvideo','music']
                                         ],
                                         elementPathEnabled: false,
                                        enableContextMenu: true,
                                         autoClearEmptyNode:true,
                                         wordCount:false,
                                         imagePopup:false,
+                                        initialFrameHeight:300,
                                         autotypeset:{ indent: true,imageBlockLine: 'center' }
                                     });
                                     ue2.ready(function() {
                                         ue2.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
                                     });
                                 </script>
-                                <script id="container2" name="jmxq_content" type="text/plain" style="height:300px" >
+                                <script id="container2" name="jmxq_content" type="text/plain">
                                     @if(isset($articleinfos->jmxq_content))
                                         {!! $articleinfos->jmxq_content !!}
                                     @endif
@@ -154,68 +107,22 @@
                                 <script type="text/javascript">
                                     var ue3 = UE.getEditor('container3',{
                                         toolbars: [
-                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote','forecolor','backcolor',
-                                                'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage',
-                                                'imageleft',
-                                                'imageright',
-                                                'imagecenter',
-                                                'superscript',
-                                                'subscript',
-                                                'autotypeset',
-                                                'lineheight',
-                                                'pasteplain',
-                                                'selectall',
-                                                'removeformat',
-                                                'formatmatch',
-                                                'cleardoc',
-                                                'rowspacingtop',
-                                                'rowspacingbottom',
-                                                'customstyle',
-                                                'paragraph',
-                                                'fontfamily',
-                                                'fontsize',
-                                                'directionalityltr',
-                                                'directionalityrtl',
-                                                'indent',
-                                                'touppercase', //字母大写
-                                                'tolowercase', //字母小写
-                                                'anchor', //锚点
-                                                'insertvideo','music',
-                                                'insertcode', //代码语言
-                                                'template', //模板
-                                                'horizontal', //分隔线
-                                                'time', //时间
-                                                'date', //日期
-                                                'spechars', //特殊字符
-                                                'inserttable',
-                                                'deletetable', //删除表格
-                                                'insertparagraphbeforetable', //"表格前插入行"
-                                                'insertrow', //前插入行
-                                                'deleterow', //删除行
-                                                'insertcol', //前插入列
-                                                'deletecol', //删除列
-                                                'mergecells', //合并多个单元格
-                                                'mergeright', //右合并单元格
-                                                'mergedown', //下合并单元格
-                                                'splittocells', //完全拆分单元格
-                                                'splittorows', //拆分成行
-                                                'splittocols', //拆分成列
-                                                'charts', // 图表
-                                                'source', //源代码
-                                                'emotion', 'fullscreen']
+                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage','source', //源代码
+                                                'emotion', 'fullscreen','insertvideo','music']
                                         ],
                                         elementPathEnabled: false,
                                        enableContextMenu: true,
                                         autoClearEmptyNode:true,
                                         wordCount:false,
                                         imagePopup:false,
+                                        initialFrameHeight:300,
                                         autotypeset:{ indent: true,imageBlockLine: 'center' }
                                     });
                                     ue3.ready(function() {
                                         ue3.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
                                     });
                                 </script>
-                                <script id="container3" name="jmys_content" type="text/plain" style="height:300px" >
+                                <script id="container3" name="jmys_content" type="text/plain" >
                                     @if(isset($articleinfos->jmys_content))
                                         {!! $articleinfos->jmys_content !!}
                                     @endif
@@ -253,68 +160,22 @@
                                 <script type="text/javascript">
                                     var ue4 = UE.getEditor('container4',{
                                         toolbars: [
-                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote','forecolor','backcolor',
-                                                'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage',
-                                                'imageleft',
-                                                'imageright',
-                                                'imagecenter',
-                                                'superscript',
-                                                'subscript',
-                                                'autotypeset',
-                                                'lineheight',
-                                                'pasteplain',
-                                                'selectall',
-                                                'removeformat',
-                                                'formatmatch',
-                                                'cleardoc',
-                                                'rowspacingtop',
-                                                'rowspacingbottom',
-                                                'customstyle',
-                                                'paragraph',
-                                                'fontfamily',
-                                                'fontsize',
-                                                'directionalityltr',
-                                                'directionalityrtl',
-                                                'indent',
-                                                'touppercase', //字母大写
-                                                'tolowercase', //字母小写
-                                                'anchor', //锚点
-                                                'insertvideo','music',
-                                                'insertcode', //代码语言
-                                                'template', //模板
-                                                'horizontal', //分隔线
-                                                'time', //时间
-                                                'date', //日期
-                                                'spechars', //特殊字符
-                                                'inserttable',
-                                                'deletetable', //删除表格
-                                                'insertparagraphbeforetable', //"表格前插入行"
-                                                'insertrow', //前插入行
-                                                'deleterow', //删除行
-                                                'insertcol', //前插入列
-                                                'deletecol', //删除列
-                                                'mergecells', //合并多个单元格
-                                                'mergeright', //右合并单元格
-                                                'mergedown', //下合并单元格
-                                                'splittocells', //完全拆分单元格
-                                                'splittorows', //拆分成行
-                                                'splittocols', //拆分成列
-                                                'charts', // 图表
-                                                'source', //源代码
-                                                'emotion', 'fullscreen']
+                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage','source', //源代码
+                                                'emotion', 'fullscreen','insertvideo','music']
                                         ],
                                         elementPathEnabled: false,
                                        enableContextMenu: true,
                                         autoClearEmptyNode:true,
                                         wordCount:false,
                                         imagePopup:false,
+                                        initialFrameHeight:300,
                                         autotypeset:{ indent: true,imageBlockLine: 'center' }
                                     });
                                     ue4.ready(function() {
                                         ue4.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
                                     });
                                 </script>
-                                <script id="container4" name="jmlc_content" type="text/plain" style="height:300px" >
+                                <script id="container4" name="jmlc_content" type="text/plain"  >
                                     @if(isset($articleinfos->jmlc_content))
                                         {!! $articleinfos->jmlc_content !!}
                                     @endif
@@ -352,68 +213,22 @@
                                 <script type="text/javascript">
                                     var ue5 = UE.getEditor('container5',{
                                         toolbars: [
-                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote','forecolor','backcolor',
-                                                'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage',
-                                                'imageleft',
-                                                'imageright',
-                                                'imagecenter',
-                                                'superscript',
-                                                'subscript',
-                                                'autotypeset',
-                                                'lineheight',
-                                                'pasteplain',
-                                                'selectall',
-                                                'removeformat',
-                                                'formatmatch',
-                                                'cleardoc',
-                                                'rowspacingtop',
-                                                'rowspacingbottom',
-                                                'customstyle',
-                                                'paragraph',
-                                                'fontfamily',
-                                                'fontsize',
-                                                'directionalityltr',
-                                                'directionalityrtl',
-                                                'indent',
-                                                'touppercase', //字母大写
-                                                'tolowercase', //字母小写
-                                                'anchor', //锚点
-                                                'insertvideo','music',
-                                                'insertcode', //代码语言
-                                                'template', //模板
-                                                'horizontal', //分隔线
-                                                'time', //时间
-                                                'date', //日期
-                                                'spechars', //特殊字符
-                                                'inserttable',
-                                                'deletetable', //删除表格
-                                                'insertparagraphbeforetable', //"表格前插入行"
-                                                'insertrow', //前插入行
-                                                'deleterow', //删除行
-                                                'insertcol', //前插入列
-                                                'deletecol', //删除列
-                                                'mergecells', //合并多个单元格
-                                                'mergeright', //右合并单元格
-                                                'mergedown', //下合并单元格
-                                                'splittocells', //完全拆分单元格
-                                                'splittorows', //拆分成行
-                                                'splittocols', //拆分成列
-                                                'charts', // 图表
-                                                'source', //源代码
-                                                'emotion', 'fullscreen']
+                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage','source', //源代码
+                                                'emotion', 'fullscreen','insertvideo','music']
                                         ],
                                         elementPathEnabled: false,
                                        enableContextMenu: true,
                                         autoClearEmptyNode:true,
                                         wordCount:false,
                                         imagePopup:false,
+                                        initialFrameHeight:300,
                                         autotypeset:{ indent: true,imageBlockLine: 'center' }
                                     });
                                     ue5.ready(function() {
                                         ue5.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
                                     });
                                 </script>
-                                <script id="container5" name="jmzc_content" type="text/plain" style="height:300px" >
+                                <script id="container5" name="jmzc_content" type="text/plain"  >
                                     @if(isset($articleinfos->jmzc_content))
                                         {!! $articleinfos->jmzc_content !!}
                                     @endif
@@ -451,68 +266,22 @@
                                 <script type="text/javascript">
                                     var ue6 = UE.getEditor('container6',{
                                         toolbars: [
-                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote','forecolor','backcolor',
-                                                'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage',
-                                                'imageleft',
-                                                'imageright',
-                                                'imagecenter',
-                                                'superscript',
-                                                'subscript',
-                                                'autotypeset',
-                                                'lineheight',
-                                                'pasteplain',
-                                                'selectall',
-                                                'removeformat',
-                                                'formatmatch',
-                                                'cleardoc',
-                                                'rowspacingtop',
-                                                'rowspacingbottom',
-                                                'customstyle',
-                                                'paragraph',
-                                                'fontfamily',
-                                                'fontsize',
-                                                'directionalityltr',
-                                                'directionalityrtl',
-                                                'indent',
-                                                'touppercase', //字母大写
-                                                'tolowercase', //字母小写
-                                                'anchor', //锚点
-                                                'insertvideo','music',
-                                                'insertcode', //代码语言
-                                                'template', //模板
-                                                'horizontal', //分隔线
-                                                'time', //时间
-                                                'date', //日期
-                                                'spechars', //特殊字符
-                                                'inserttable',
-                                                'deletetable', //删除表格
-                                                'insertparagraphbeforetable', //"表格前插入行"
-                                                'insertrow', //前插入行
-                                                'deleterow', //删除行
-                                                'insertcol', //前插入列
-                                                'deletecol', //删除列
-                                                'mergecells', //合并多个单元格
-                                                'mergeright', //右合并单元格
-                                                'mergedown', //下合并单元格
-                                                'splittocells', //完全拆分单元格
-                                                'splittorows', //拆分成行
-                                                'splittocols', //拆分成列
-                                                'charts', // 图表
-                                                'source', //源代码
-                                                'emotion', 'fullscreen']
+                                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'unlink', 'insertimage','source', //源代码
+                                                'emotion', 'fullscreen','insertvideo','music']
                                         ],
                                         elementPathEnabled: false,
                                        enableContextMenu: true,
                                         autoClearEmptyNode:true,
                                         wordCount:false,
                                         imagePopup:false,
+                                        initialFrameHeight:300,
                                         autotypeset:{ indent: true,imageBlockLine: 'center' }
                                     });
                                     ue6.ready(function() {
                                         ue6.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
                                     });
                                 </script>
-                                <script id="container6" name="jmask_content" type="text/plain" style="height:300px" >
+                                <script id="container6" name="jmask_content" type="text/plain"  >
                                     @if(isset($articleinfos->jmask_content))
                                         {!! $articleinfos->jmask_content !!}
                                     @endif

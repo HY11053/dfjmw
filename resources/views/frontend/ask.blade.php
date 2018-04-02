@@ -3,8 +3,8 @@
 @section('keywords'){{$thistypeinfo->keywords}}@stop
 @section('description'){{trim($thistypeinfo->description)}}@stop
 @section('headlibs')
-    <meta name="Copyright" content="5988创业商机网-{{env('APP_URL')}}"/>
-    <meta name="author" content="5988创业商机网" />
+    <meta name="Copyright" content="东方特许加盟网-{{env('APP_URL')}}"/>
+    <meta name="author" content="东方特许加盟网" />
     <meta http-equiv="mobile-agent" content="format=wml; url={{str_replace('http://zhaji.','http://m.zhiaji.',config('app.url'))}}{{Request::getrequesturi()}}" />
     <meta http-equiv="mobile-agent" content="format=xhtml; url={{str_replace('http://zhaji.','http://m.zhaji.',config('app.url'))}}{{Request::getrequesturi()}}" />
     <meta http-equiv="mobile-agent" content="format=html5; url={{str_replace('http://zhaji.','http://m.zhiji.',config('app.url'))}}{{Request::getrequesturi()}}" />

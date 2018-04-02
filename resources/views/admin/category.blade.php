@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/adminlte/plugins/iCheck/flat/blue.css">
 <style>
     .spide_span{display: inline-block; float: right; margin-right: 20px;}
-    .spide_span span{padding: 5px; margin-left: 5px; font-weight: 400; cursor: pointer; }
+    .spide_span span{padding: 5px; margin-left: 5px; font-weight: 400; cursor: pointer; line-height: 16px;}
     .spide_span span.ncls{display: inline-block;  width: 60px; }
     h3.box-title a{color: inherit; text-decoration: none;}
 

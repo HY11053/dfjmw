@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', '5988创业商机网'),
+    'name' => env('APP_NAME', '东方特许加盟网'),
 
     /*
     |--------------------------------------------------------------------------
@@ -132,10 +132,10 @@ return [
     | Site home page key words and description and record information
     | and other related settings
     */
-    'webname'=>'炸鸡加盟_炸鸡店加盟_炸鸡店加盟要多少钱-5988创业商机网',
-    'indexname'=>'5988创业商机网',
+    'webname'=>'炸鸡加盟_炸鸡店加盟_炸鸡店加盟要多少钱-东方特许加盟网',
+    'indexname'=>'东方特许加盟网',
     'keywords'=>'炸鸡加盟,炸鸡店加盟,炸鸡品牌,加盟炸鸡店,炸鸡店加盟多少钱',
-    'description'=>'5988创业商机网炸鸡品牌信息服务平台,汇聚精选全球炸鸡品牌商机,拥有海量美食类炸鸡店加盟项目,致力于服务广大有炸鸡店店投资需求的创业人群,帮助创业者了解炸鸡店品牌的选择、炸鸡店的投资预算和开店分析',
+    'description'=>'东方特许加盟网炸鸡品牌信息服务平台,汇聚精选全球炸鸡品牌商机,拥有海量美食类炸鸡店加盟项目,致力于服务广大有炸鸡店店投资需求的创业人群,帮助创业者了解炸鸡店品牌的选择、炸鸡店的投资预算和开店分析',
     'api'=>'http://data.zz.baidu.com/urls?site=zhaji.5988.com&token=QeSFIvl5RWRgU3BT',
     'mip_api'=>'http://data.zz.baidu.com/urls?site=mip.zhaji.5988.com&token=QeSFIvl5RWRgU3BT&type=mip',
     /*

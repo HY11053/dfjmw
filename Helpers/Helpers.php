@@ -21,7 +21,7 @@ function Recursivestypeinfos($arr){
 
             if(isset($value['list']))
             {
-                echo " <li><a href=\"/admin/article/type/{$key}\"><i class=\"fa fa-envelope-o\"></i> {$value['list']}
+                echo " <li><a class=\"arctype\" href=\"/admin/article/type/{$key}\"><i class=\"fa fa-envelope-o\"></i> {$value['list']}</a>
                                 <span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$key)->count()."</span>
                                 <span class=\"label label-danger pull-right\" data-toggle=\"modal\" data-target=\".modal-sm{$key}\">删除</span>
                                 <div class=\"modal fade modal-sm{$key}\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\">
@@ -42,7 +42,7 @@ function Recursivestypeinfos($arr){
                             </div>
                         </div>
                                  <span class=\"label label-success pull-right\" onclick=\"link({$key},'admin/category/edit')\">编辑</span> 
-                                 <span class=\"label label-warning pull-right\" onclick=\"link({$key},'admin/category/create')\">添加子类</span></a></li>";
+                                 <span class=\"label label-warning pull-right\" onclick=\"link({$key},'admin/category/create')\">添加子类</span></li>";
                 if (isset($value['next']))
                 {
                     echo "<div class=\"box box-solid collapsed-box\">
@@ -55,13 +55,12 @@ function Recursivestypeinfos($arr){
                                                 </div>
                                                 <div class=\"box-body no-padding\">
                                                     <ul class=\"nav nav-pills nav-stacked\">";
-
                     foreach ($value['next'] as $item=>$items)
                     {
                         if(isset($items['list']))
                         {
 
-                            echo "<li class=\"active\"><a href=\"/admin/article/type/{$item}\"><i class=\"fa fa-inbox\"></i>".$items['list']."<span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$item)->count()."</span>
+                            echo "<li class=\"active\"><a class=\"arctype\" href=\"/admin/article/type/{$item}\"><i class=\"fa fa-inbox\"></i>".$items['list']."</a><span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$item)->count()."</span>
                             <span class=\"label label-danger pull-right\" data-toggle=\"modal\" data-target=\".modal-sm{$item}\">删除</span>
                             <div class=\"modal fade modal-sm{$item}\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\">
                             <div class=\"modal-dialog modal-s-m{$item} modal-sm\" role=\"document\">
@@ -81,13 +80,13 @@ function Recursivestypeinfos($arr){
                             </div>
                         </div>
                             
-                             <span class=\"label label-success pull-right\" onclick=\"link({$item},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$item},'admin/category/create')\">添加子类</span></a></li>";
+                             <span class=\"label label-success pull-right\" onclick=\"link({$item},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$item},'admin/category/create')\">添加子类</span></li>";
                             if(isset($items['next'])){
 
                                 Recursivestypeinfos($items['next']);
                             }
                         }else{
-                            echo "<li class=\"active\"><a href=\"/admin/article/type/{$item}\"><i class=\"fa fa-inbox\"></i>".$items."  <span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$item)->count()."</span>
+                            echo "<li class=\"active\"><a class=\"arctype\" href=\"/admin/article/type/{$item}\"><i class=\"fa fa-inbox\"></i>".$items." </a> <span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$item)->count()."</span>
                             <span class=\"label label-danger pull-right\" data-toggle=\"modal\" data-target=\".modal-sm$item\">删除</span> 
                             <div class=\"modal fade modal-sm{$item}\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\">
                             <div class=\"modal-dialog modal-sm modal-s-m{$item} \" role=\"document\">
@@ -106,7 +105,7 @@ function Recursivestypeinfos($arr){
                                 </div>
                             </div>
                         </div>
-                            <span class=\"label label-success pull-right\" onclick=\"link({$item},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$item},'admin/category/create')\">添加子类</span></a></li>";
+                            <span class=\"label label-success pull-right\" onclick=\"link({$item},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$item},'admin/category/create')\">添加子类</span></li>";
 
                         }
 
@@ -117,8 +116,7 @@ function Recursivestypeinfos($arr){
 
                 }
             }else{
-            //print_r($value);
-                echo " <li><a href=\"/admin/article/type/{$value}\"><i class=\"fa fa-envelope-o\"></i> {$value}
+                echo " <li><a class=\"arctype\" href=\"/admin/article/type/{$key}\"><i class=\"fa fa-envelope-o\"></i> {$value}</a>
                                 <span class=\"label label-primary pull-right\">".\App\AdminModel\Archive::where('typeid',$value)->count()."</span>
                                 <span class=\"label label-danger pull-right\" data-toggle=\"modal\" data-target=\".modal-sm{$key}\">删除</span>
                                 <div class=\"modal fade modal-sm{$key}\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\">
@@ -138,7 +136,7 @@ function Recursivestypeinfos($arr){
                                 </div>
                             </div>
                         </div>
-                                 <span class=\"label label-success pull-right\" onclick=\"link({$key},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$key},'admin/category/create')\">添加子类</span></a></li>";
+                                 <span class=\"label label-success pull-right\" onclick=\"link({$key},'admin/category/edit')\">编辑</span> <span class=\"label label-warning pull-right\" onclick=\"link({$key},'admin/category/create')\">添加子类</span></li>";
 
             }
 

@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ()
     Route::get('article/create','ArticleController@Create');
     Route::get('article/brandcreate','ArticleController@BrandCreate');
     Route::get('article/edit/{id}','ArticleController@Edit');
+    Route::get('article/brandedit/{id}','ArticleController@BrandEdit');
     Route::get('article/type/{id}','ArticleController@Type');
     Route::post('article/create','ArticleController@PostCreate')->name('article_create');
     Route::post('article/search','ArticleController@PostArticleSearch')->name('article_search');
@@ -124,42 +125,7 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ()
 Route::get('phone',function(){
     return view('phone');
 });
-/**
- * mip页面
- */
-Route::group(['domain' => 'mip.zhaji.5988.com'], function () {
-    Route::get('/', 'Mip\MipIndexController@MipIndex');
-    Route::get('about','Mip\MipIndexController@Mipabout');
-    Route::get('law','Mip\MipIndexController@Miplaw');
-    Route::get('contact','Mip\MipIndexController@Mipcontact');
-    Route::get('paihangbang','Mip\MipIndexController@MipPaihangbang');
-    Route::get('paihangbang/page/{page}/','Mip\MipIndexController@MipPaihangbang')->name('paihangbanglists');
-    Route::get('brands','Mip\MipIndexController@MipPinpai');
-    Route::get('brands/page/{page}/','Mip\MipIndexController@Mippinpai')->name('Pinpai');
-    Route::get('{path}','Mip\MipIndexController@MipBrandLists');
-    Route::get('{path?}/page/{page}/','Mip\MipIndexController@MipBrandLists')->name('pagelists');
-    Route::get('{path?}/{id}.shtml','Mip\MipIndexController@MipBrandArticle');
-    Route::any('/phone/crosscomplate','Mobile\PhoneController@Complates');
-    Route::any('/phone/mipcrosscomplate','Mobile\PhoneController@phoneButtomComplates');
-});
-//前台界面
-Route::group(['domain' => 'm.zhaji.5988.com'], function () {
-    Route::get('/', 'Mobile\MobileController@Index');
-    Route::get('about','Mobile\StatementController@about');
-    Route::get('law','Mobile\StatementController@law');
-    //Route::get('map','Frontend\StatementController@map');
-    Route::get('contact','Mobile\StatementController@contact');
-    Route::get('paihangbang','Mobile\MobileController@Paihangbang');
-    Route::get('paihangbang/page/{page}/','Mobile\MobileController@Paihangbang')->name('paihangbanglists');
-    Route::get('brands','Mobile\MobileController@Pinpai');
-    Route::get('brands/page/{page}/','Mobile\MobileController@pinpai')->name('Pinpai');
-    Route::get('{path}','Mobile\MobileController@BrandLists');
-    Route::get('{path?}/page/{page}/','Mobile\MobileController@BrandLists')->name('pagelists');
-    Route::get('{path?}/{id}.shtml','Mobile\MobileController@BrandArticle');
-    Route::post('/phone/complate','Mobile\PhoneController@phoneComplates');
-    Route::any('/phone/crosscomplate','Mobile\PhoneController@Complates');
-    Route::post('/phone/complate/list','Mobile\PhoneController@ComplateBrands');
-});
+
 Route::get('/','Frontend\IndexController@Index');
 Route::get('demo','Frontend\ComparisionController@demo');
 Route::get('dem2','Frontend\ComparisionController@demo2');

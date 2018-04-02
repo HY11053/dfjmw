@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\AdminModel\Addonarticle;
 use App\AdminModel\Archive;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +19,7 @@ class ComparisionController extends Controller
         return view('frontend.pk',compact('cbrand1','cbrand2','cbrand3'));
     }
     function demo(){
-        for($i=1;$i<Archive::max('id');$i++)
+        /*for($i=1;$i<Archive::max('id');$i++)
         {
             if(Archive::find($i))
             {
@@ -27,7 +28,7 @@ class ComparisionController extends Controller
               Archive::where('id',$i)->update(['description'=>$description]);
 
             }
-        }
+        }*/
     }
     function demo2()
     {

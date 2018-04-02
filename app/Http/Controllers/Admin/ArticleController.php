@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\AdminModel\Addonarticle;
 use App\AdminModel\Archive;
 use App\AdminModel\Arctype;
+use App\AdminModel\Brandarticle;
 use App\Events\SitemapEvent;
 use App\Http\Requests\CreateArticleRequest;
 use App\Helpers\UploadImages;
@@ -90,32 +91,41 @@ class ArticleController extends Controller
         $request['dutyadmin']=auth('admin')->id();
         //图片alt信息及title替换
         $request['body']=$this->ImageInformation($request->input('body'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmxq_content']=$this->ImageInformation($request->input('jmxq_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmys_content']=$this->ImageInformation($request->input('jmys_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmask_content']=$this->ImageInformation($request->input('jmask_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmlc_content']=$this->ImageInformation($request->input('jmlc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmzc_content']=$this->ImageInformation($request->input('jmzc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        Archive::create($request->all());
-        $request['id']=Archive::max('id');
-        Addonarticle::create($request->all());
-        auth('admin')->user()->notify(new ArticlePublishedNofication(Archive::latest() ->first()));
-        //百度主动推送
-        $thisarticle=Archive::where('id',Archive::max('id'))->find(Archive::max('id'));
-        $thisarticleurl='http://zhaji.5988.com'.'/'.$thisarticle->arctype->real_path.'/'.$thisarticle->id.'.shtml';
-        $miparticleurl='http://mip.zhaji.5988.com'.'/'.$thisarticle->arctype->real_path.'/'.$thisarticle->id.'.shtml';
-        $token=config('app.api', '');
-        $mip_api=config('app.mip_api', '');
-        if($thisarticle->created_at>Carbon::now()){
-            return redirect(action('Admin\ArticleController@Index'));
+      //不同文档类型分类入库
+        if (!$request->input('mid'))
+        {
+            Archive::create($request->all());
+            $request['id']=Archive::max('id');
+            Addonarticle::create($request->all());
+            //百度主动推送
+            $thisarticle=Archive::where('id',Archive::max('id'))->find(Archive::max('id'));
+            $thisarticleurl='http://zhaji.5988.com'.'/'.$thisarticle->arctype->real_path.'/'.$thisarticle->id.'.shtml';
+            $miparticleurl='http://mip.zhaji.5988.com'.'/'.$thisarticle->arctype->real_path.'/'.$thisarticle->id.'.shtml';
+            $token=config('app.api', '');
+            $mip_api=config('app.mip_api', '');
+            if($thisarticle->created_at>Carbon::now()){
+                return redirect(action('Admin\ArticleController@Index'));
+            }else{
+                //$this->BaiduCurl($thisarticleurl,$token,'');
+                //$this->BaiduCurl($miparticleurl,$mip_api,'');
+                //event(new SitemapEvent());
+                return redirect(action('Admin\ArticleController@Index'));
+            }
         }else{
-            $this->BaiduCurl($thisarticleurl,$token,'');
-            $this->BaiduCurl($miparticleurl,$mip_api,'');
-            //event(new SitemapEvent());
-            return redirect(action('Admin\ArticleController@Index'));
+            $request['jmxq_content']=$this->ImageInformation($request->input('jmxq_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmys_content']=$this->ImageInformation($request->input('jmys_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmask_content']=$this->ImageInformation($request->input('jmask_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmlc_content']=$this->ImageInformation($request->input('jmlc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmzc_content']=$this->ImageInformation($request->input('jmzc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            Brandarticle::create($request->all());
+            return redirect(action('Admin\ArticleController@Brands'));
         }
+        auth('admin')->user()->notify(new ArticlePublishedNofication(Archive::latest() ->first()));
+
+
     }
 
-    /**文档编辑
+    /**普通文档文档编辑
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -125,12 +135,14 @@ class ArticleController extends Controller
         $pics=explode(',',Addonarticle::where('id',$id)->value('imagepics'));
         //$articleinfos=Archive::find($id);
         $articleinfos=DB::table('archives')->join('addonarticles','archives.id','=','addonarticles.id')->where('addonarticles.id','=',$id)->first();
-        if($articleinfos->mid==0)
-        {
-            return view('admin.article_edit',compact('id','articleinfos','allnavinfos','pics'));
-        }else{
-            return view('admin.article_brandedit',compact('id','articleinfos','allnavinfos','pics'));
-        }
+        return view('admin.article_edit',compact('id','articleinfos','allnavinfos','pics'));
+    }
+    public function BrandEdit($id)
+    {
+        $allnavinfos=Arctype::where('is_write',1)->pluck('typename','id');
+        $pics=explode(',',Addonarticle::where('id',$id)->value('imagepics'));
+        $articleinfos=Brandarticle::where('id',$id)->first();
+        return view('admin.article_brandedit',compact('id','articleinfos','allnavinfos','pics'));
 
     }
 
@@ -176,16 +188,23 @@ class ArticleController extends Controller
         }
 
         $request['body']=$this->ImageInformation($request->input('body'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmxq_content']=$this->ImageInformation($request->input('jmxq_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmys_content']=$this->ImageInformation($request->input('jmys_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmask_content']=$this->ImageInformation($request->input('jmask_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmlc_content']=$this->ImageInformation($request->input('jmlc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
-        $request['jmzc_content']=$this->ImageInformation($request->input('jmzc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
         //$flags=array_unique(explode(',',Archive::where('id',$id)->value('flags')));
         //$request['flags']=implode(',',$flags);
-        Archive::findOrFail($id)->update($request->all());
-        Addonarticle::findOrFail($id)->update($request->all());
-        return redirect(action('Admin\ArticleController@Index'));
+        if (!$request->input('mid'))
+        {
+            Archive::findOrFail($id)->update($request->all());
+            Addonarticle::findOrFail($id)->update($request->all());
+            return redirect(action('Admin\ArticleController@Index'));
+        }else{
+            $request['jmxq_content']=$this->ImageInformation($request->input('jmxq_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmys_content']=$this->ImageInformation($request->input('jmys_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmask_content']=$this->ImageInformation($request->input('jmask_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmlc_content']=$this->ImageInformation($request->input('jmlc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            $request['jmzc_content']=$this->ImageInformation($request->input('jmzc_content'),$request->input('shorttitle')?$request->input('shorttitle'):$request->input('brandname'),$request->input('title'));
+            Brandarticle::findOrFail($id)->update($request->all());
+            return redirect(action('Admin\ArticleController@Brands'));
+        }
+
     }
 
     /**当前用户发布的文档
@@ -263,8 +282,8 @@ class ArticleController extends Controller
      */
     function Brands()
     {
-        $articles=Archive::where('mid',1)->latest()->paginate(30);
-        return view('admin.article',compact('articles'));
+        $articles=Brandarticle::where('mid',1)->latest()->paginate(30);
+        return view('admin.brandarticle',compact('articles'));
     }
 
     /** 栏目文章查看

@@ -43,4 +43,8 @@ class Arctype extends Model
     {
         return $this->hasMany('App\AdminModel\Addonarticle','typeid');
     }
+    protected function brandarticle()
+    {
+        return $this->hasMany('App\AdminModel\Brandarticle','typeid');
+    }
 }

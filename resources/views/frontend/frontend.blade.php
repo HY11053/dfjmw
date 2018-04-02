@@ -8,97 +8,70 @@
     <meta name="applicable-device" content="pc" />
     <meta name="csrf-token" content=" {{ csrf_token() }}">
     @if(Request::getrequesturi()=='/')
-<title>@yield('title')</title>
+        <title>@yield('title')</title>
     @else
-<title>@yield('title')-5988创业商机网</title>
+        <title>@yield('title')-东方特许加盟网</title>
     @endif
-<meta name="keywords" content="@yield('keywords')"/>
+    <meta name="keywords" content="@yield('keywords')"/>
     <meta name="description" content="@yield('description')"/>
-    <link href="/reception/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/reception/css/zxbj_bottom_slide.css" rel="stylesheet" type="text/css"/>
-@yield('headlibs')
-<script type="text/javascript" src="/reception/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/reception/js/jquery.SuperSlide.2.1.1.js"></script>
-    <script type="text/javascript" src="/reception/js/index.js"></script>
+    @yield('headlibs')
+    <link href="http://www.4006666688.com/css/allcss.css" rel="stylesheet" type="text/css" />
+    <script src="http://www.4006666688.com/js/pngFix.js" type="text/javascript"></script>
+    <script src="http://www.4006666688.com/js/dftxjm.js" type="text/javascript"></script>
+    <script src="http://www.4006666688.com/js/MSClass.js" type="text/javascript"></script>
+    <script src="http://www.4006666688.com/js/jquery.js" type="text/javascript" ></script>
 </head>
-
 <body>
 @include('frontend.header')
-
+<!--头部开始(到搜索结束)-->
 <main>
-@yield('main_content')
+    @yield('main_content')
 </main>
-<footer>
-<div class="footer">
-    <div class="footer_nav"><a href="http://www.5988.com/guanyu.html" rel="nofollow">关于我们</a>　|　企业服务　|　人才招聘　|　<a href="http://www.5988.com/flgw.html" rel="nofollow">法律顾问</a>　|　合作客户　|　<a href="http://www.5988.com/shantie.html" rel="nofollow">投诉删除</a>　|　友情链接　|　服务导航　|　<a href="/storage/sitemap.xml" rel="nofollow">网站地图</a>　　|　加盟导航 sitemap</div>
-
-    <div class="copyright">
-        <p>5988创业商机网友情提示：多打电话、多咨询、实地考察，可降低投资风险！</p>
-        <p>Copyright © 2018 zhaji.5988.com Corporation, All Rights Reserved 上海佐赛网络科技有限公司 版权所有</p>
-        <p><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011302003776" rel="nofollow">  沪公网安备 31011302003776号</a></p>
+<div class="foot center">
+    <div>
+        <a href="http://www.4006666688.com/about/about">关于我们</a>　|　
+        <a href="http://www.4006666688.com/help/">帮助中心</a>　|　
+        <a href="http://www.4006666688.com/about/codex"> 法律声明</a>　|　
+        <a href="http://www.4006666688.com/sitemap.htm"> 网站地图</a>　|　
+        <a href="http://www.4006666688.com/services"> 广告合作</a>　|　
+        <a href="http://www.4006666688.com/about/job">招贤纳士</a>　|　
+        <a href="http://www.4006666688.com/about/map">联系我们</a>　|　
+        <a href="http://www.4006666688.com/about/message">留言反馈</a>　|　
+        <a href="http://www.4006666688.com/en/">International</a>
     </div>
-        <div class="footernew footheight" style="width:1000px;" bosszone="footer">
-            <div style="width:960px;">
-                <p>
-                    <span class="fl"><a href="http://www.cyberpolice.cn/wfjb/" target="_blank" rel="nofollow"><img width="36" height="43" border="0" alt="上海网警网络110" src="/reception/images/temp/816587.gif"></a></span>
-                    <span class="fr"><a href="http://www.cyberpolice.cn/wfjb/" target="_blank" rel="nofollow">上海网警网络110<br>
-		报警平台</a></span>
-                </p>
-                <p>
-                    <span class="fl"><a href="http://www.police.sh.cn/shga/ygjw" target="_blank" rel="nofollow"><img width="36" height="42" border="0" alt="公共信息安全网络监察" src="/reception/images/temp/6743671.jpg"></a></span>
-                    <span class="fr"><a href="http://www.police.sh.cn/shga/ygjw" target="_blank" rel="nofollow">公共信息安<br>
-		全网络监察</a></span>
-                </p>
-
-                <p>
-                    <span class="fl"><a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow"><img width="35" height="43" border="0" alt="经营性网站备案信息" src="/reception/images/temp/ind36.gif"></a></span>
-                    <span class="fr"><a target="_blank" class="lcblack" href="http://www.miitbeian.gov.cn" rel="nofollow">经营性网站<br>
-		备案信息</a></span>
-                </p>
-                <p>
-                    <span style="width:44px;" class="fl"><a href="http://www.12377.cn/" target="_blank" rel="nofollow"><img width="44" height="44" border="0" alt="中国互联网举报中心" src="/reception/images/temp/buliang.png"></a></span>
-                    <span style="width:64px;" class="fr"><a class="lcblack" href="http://www.12377.cn/" target="_blank" rel="nofollow">中国互联网<br>
-		举报中心</a></span>
-                </p>
-                <p>
-                    <span style="width:44px;" class="fl"><a href="http://www.wenming.cn" target="_blank" rel="nofollow"><img width="44" height="42" border="0" alt="中国文明网传播文明" src="/reception/images/temp/wmlogo.gif"></a></span>
-                    <span style="width:64px;" class="fr"><a class="lcblack" href="http://www.wenming.cn" target="_blank" rel="nofollow">中国文明网<br>传播文明</a></span>
-                </p>
-                <p style="width:128px;height:52px;border:0;">
-                    <span style="padding:0;" class="fl"><a href="http://t.knet.cn/index_new.jsp" target="_blank" rel="nofollow"><img border="0" alt="诚信网站" src="/reception/images/temp/cxrz5.png"></a></span>
-                </p>
-                <p>
-                    <span style="width:44px;" class="fl"><a href="http://www.sgs.gov.cn/shaic/" target="_blank" rel="nofollow"><img src="http://mat1.gtimg.com/www/images/qq2012/gswj2015.jpg" title="深圳市市场监督管理局企业主体身份公示" alt="深圳市市场监督管理局企业主体身份公示"></a></span>
-                    <span style="width:64px;" class="fr"><a class="lcblack" href="http://www.sgs.gov.cn/shaic/" target="_blank" rel="nofollow">工商网监<br>电子标识</a></span>
-                </p>
-            </div>
-        </div>
+    <p>沪ICP备09004241号 <span>服务热线：400-666-6688 </span>
+        在线客服：
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2353446360&site=qq&menu=yes">
+            <img src="http://wpa.qq.com/pa?p=2:2353446360:4 &r=0.37876988090706104" alt="点击这里给我发消息" border="0" align="absmiddle" title="点击这里给我发消息">
+        </a>&nbsp;
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2395802167&site=qq&menu=yes">
+            <img src="http://wpa.qq.com/pa?p=2:2395802167:4 &r=0.37876988090706104" alt="点击这里给我发消息" border="0" align="absmiddle" title="点击这里给我发消息">
+        </a><br />
+        常年法律顾问：德载中怡律师事务所</p>
 </div>
-<script type="text/javascript" src="/reception/js/search_ajax.js"></script>
-<script src="/reception/js/comment.js"></script>
-    <script type="text/javascript" src="/reception/js/side_fixed.js"></script>
-<script src="/reception/js/GlobalProvinces.js" type="text/javascript"></script>
-    <div style="width:300px;margin:0 auto; padding:20px 0;">
-        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011302003924" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/img/ghs.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31011302003924号</p></a>
-    </div>
-</footer>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?56e8bae2e73114a99f41e1d12d16429c";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+
+<!--# End 底部 #-->
+
+<script type="text/javascript">
+    function switchtab(tabname,n)
+    {
+        var len=tabname.parentNode.childNodes.length;
+        for(var i=0;i<len;i++)
+        {
+            tabname.parentNode.childNodes[i].className="";
+            tabname.className="current";
+        }
+        for(i=1;i<=6;i++)
+        {
+            document.getElementById("brandhot"+i).style.display="none";
+        }
+        document.getElementById("brandhot"+n).style.display="";
+    }
 </script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?edb86695cf5b773eaf07c2ad61bf9c24";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+
+<script type="text/javascript">
+    /*********文字翻屏滚动***************/
+    new Marquee(["TextDiv1","TextContent1"],0,1,320,40,20,2000,1000)			//文字翻屏滚动实例
 </script>
 
 </body>

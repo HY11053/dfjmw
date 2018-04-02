@@ -25,7 +25,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'typename'=>'required',
-            'typedir'=>array('regex:/^[a-z0-9A-Z_]+[^\/]$/'),
+            //'typedir'=>array('regex:/^[a-z0-9A-Z_]+[^\/]$/'),
             'is_write'=>'required',
             'sortrank'=>'required|numeric|min:0'
         ];

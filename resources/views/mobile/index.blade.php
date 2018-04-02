@@ -1,7 +1,7 @@
 @extends('mobile.mobile')
-@section('title'){{config('app.webname', '5988创业商机网') }}@stop
-@section('keywords'){{config('app.keywords', '5988创业商机网') }}@stop
-@section('description'){{config('app.description', '5988创业商机网') }}@stop
+@section('title'){{config('app.webname', '东方特许加盟网') }}@stop
+@section('keywords'){{config('app.keywords', '东方特许加盟网') }}@stop
+@section('description'){{config('app.description', '东方特许加盟网') }}@stop
 @section('main_content')
     <div class="index_nav">
         <ul>
