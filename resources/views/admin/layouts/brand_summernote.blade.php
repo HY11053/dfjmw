@@ -3,12 +3,11 @@
 
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-        <h3 class="col-md-6 col-sm-3 col-xs-12 timeline-header no-border">
-            <a href="#"> {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}</a>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;"> {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label','style'=>'padding-top:5px; '))}}</a>
+            {{Form::text('ppjstitle', null, array('class' => 'form-control','id'=>'ppjstitle','placeholder'=>'品牌介绍标题','style'=>'display:inline-block'))}}
         </h3>
-            <div class="col-md-6 col-sm-9 col-xs-12">
-                {{Form::text('ppjstitle', null, array('class' => 'form-control col-md-10','id'=>'ppjstitle','placeholder'=>'品牌介绍标题'))}}
-            </div>
+
 
     </div>
 </li>
