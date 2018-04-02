@@ -1,16 +1,24 @@
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+        <h3 class="col-md-6 col-sm-3 col-xs-12 timeline-header no-border">
+            <a href="#"> {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}</a>
+        </h3>
+            <div class="col-md-6 col-sm-9 col-xs-12">
+                {{Form::text('ppjstitle', null, array('class' => 'form-control col-md-10','id'=>'ppjstitle','placeholder'=>'品牌介绍标题'))}}
+            </div>
+
+    </div>
+</li>
+<li>
     <i class="fa fa-file-text bg-maroon"></i>
 
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
 
         <h3 class="timeline-header"><a href="#">品牌介绍</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('ppjstitle', null, array('class' => 'form-control col-md-10','id'=>'ppjstitle','placeholder'=>'品牌介绍标题'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
