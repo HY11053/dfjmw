@@ -28,24 +28,24 @@
             <li class="header">主管理界面</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa  fa-file-text"></i> <span>核心操作</span>
+                    <i class="fa  fa-file-text"></i> <span>核心操作管理</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
                     <li @if(Request::getRequestUri()=='/admin/category')class="active"@endif><a href="/admin/category" ><i class="fa fa-circle-o"></i> 网站栏目管理</a></li>
-                    <li @if(Request::getRequestUri()=='/admin/article')class="active" @endif><a href="/admin/article"><i class="fa fa-circle-o"></i> 所有档案列表</a></li>
+                    <li @if(Request::getRequestUri()=='/admin/article')class="active" @endif><a href="/admin/article"><i class="fa fa-circle-o"></i> 普通文档列表</a></li>
                     <li @if(Request::getRequestUri()=='/admin/article/ownership')class="active" @endif><a href="/admin/article/ownership"><i class="fa fa-circle-o"></i> 我发布的文档</a></li>
                     <li @if(Request::getRequestUri()=='/admin/article/pendingaudit')class="active" @endif><a href="/admin/article/pendingaudit"><i class="fa fa-circle-o"></i> 等待审核文档</a></li>
                     <li @if(Request::getRequestUri()=='/admin/article/pedingpublished')class="active" @endif><a href="/admin/article/pedingpublished"><i class="fa fa-circle-o"></i> 待发布的文档</a></li>
-                    <li @if(Request::getRequestUri()=='/admin/article/brands')class="active" @endif><a href="/admin/article/brands"><i class="fa fa-circle-o"></i> 炸鸡品牌文档</a></li>
+                    <li @if(Request::getRequestUri()=='/admin/article/brands')class="active" @endif><a href="/admin/article/brands"><i class="fa fa-circle-o"></i> 品牌文档列表</a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa  fa-commenting"></i>
-                    <span>问答及评论管理</span>
+                    <span>问答评论管理</span>
                     <span class="pull-right-container">
               <span class="label label-primary pull-right">9</span>
             </span>
@@ -78,7 +78,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-pie-chart"></i>
-                    <span>杂项管理</span>
+                    <span>杂项功能管理</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -87,8 +87,8 @@
                     <li @if(Request::getRequestUri()=='/admin/makesitemap')class="active"@endif><a href="/admin/makesitemap"><i class="fa fa-circle-o"></i>XML地图生成</a></li>
                     <li @if(Request::getRequestUri()=='/admin/phone')class="active"@endif><a href="/admin/phone"><i class="fa fa-circle-o"></i> 电话提交管理</a></li>
                     <li @if(Request::getRequestUri()=='/admin/makemsitemap')class="active"@endif><a href="/admin/makemsitemap"><i class="fa fa-circle-o"></i> 移动端地图生成</a></li>
-                    <li @if(Request::getRequestUri()=='/admin/brandlists')class="active"@endif><a href="/admin/brandlists"><i class="fa fa-circle-o"></i>炸鸡品牌列表</a></li>
-                    <li @if(Request::getRequestUri()=='/admin/worklinks')class="active"@endif><a href="/admin/worklinks"><i class="fa fa-circle-o"></i> 链接生成</a></li>
+                    <li @if(Request::getRequestUri()=='/admin/brandlists')class="active"@endif><a href="/admin/brandlists"><i class="fa fa-circle-o"></i>品牌分类列表</a></li>
+                    <li @if(Request::getRequestUri()=='/admin/worklinks')class="active"@endif><a href="/admin/worklinks"><i class="fa fa-circle-o"></i> 工作链接生成</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -122,7 +122,7 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa  fa-wrench"></i> <span>系统设置</span>
+                    <i class="fa  fa-wrench"></i> <span>系统设置中心</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

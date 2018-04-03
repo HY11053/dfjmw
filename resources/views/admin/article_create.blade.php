@@ -5,7 +5,6 @@
 <link href="/adminlte/plugins/iCheck/all.css" rel="stylesheet">
 <link rel="stylesheet" href="/adminlte//plugins/daterangepicker/daterangepicker.css">
 <link rel="stylesheet" href="/adminlte/plugins/datepicker/datepicker3.css">
-<!--<link href="/adminlte/plugins/summernote/summernote-bs3.css" rel="stylesheet">-->
 <link href="/adminlte/dist/css/fileinput.min.css" rel="stylesheet">
 @stop
 @section('content')

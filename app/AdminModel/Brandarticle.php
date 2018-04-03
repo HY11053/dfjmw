@@ -64,6 +64,7 @@ class Brandarticle extends Model
         'jmlc_content',
         'jmzc_content',
         'jmask_content',
+        'brandmoshi','branduser','brandphone','brandurl','brandemail'
     ];
     public function arctype()
     {

@@ -112,6 +112,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'],function ()
     Route::get('branddatas/del/{id}','NaichaBrandController@Delete');
     Route::post('brandstatus/{id}', 'NaichaBrandController@Status')->name('status');
     Route::get('weichatuser/{openid}','WechatUserController@User');
+    Route::get('querylisthtml','QuerylistHtmlController@getQueryListHtml');
+    Route::get('querylisthtml404','QuerylistHtmlController@curl404');
 
     Route::get('Atlas',function(){
         abort(403);

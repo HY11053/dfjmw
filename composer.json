@@ -7,9 +7,10 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+        "jaeger/querylist": "^4.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-		"laravelcollective/html": "~5.0",
+        "laravelcollective/html": "~5.0",
         "mews/captcha": "^2.1",
         "overtrue/laravel-ueditor": "~1.0",
         "overtrue/laravel-wechat": "~3.0",

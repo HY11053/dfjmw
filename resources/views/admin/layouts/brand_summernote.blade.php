@@ -1,22 +1,17 @@
 <li>
     <i class="fa fa-user bg-aqua"></i>
-
     <div class="timeline-item">
-        <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
         <h3 class="timeline-header no-border">
-            <a href="#" style="display:inline-block;"> {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label','style'=>'padding-top:5px; '))}}</a>
+            <a href="#" style="display:inline-block;"> {{Form::label('ppjstitle', '品牌介绍标题', array('class' => 'control-label'))}}</a>
             {{Form::text('ppjstitle', null, array('class' => 'form-control','id'=>'ppjstitle','placeholder'=>'品牌介绍标题','style'=>'display:inline-block'))}}
         </h3>
-
-
     </div>
 </li>
 <li>
     <i class="fa fa-file-text bg-maroon"></i>
-
     <div class="timeline-item">
-        <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
+        <span class="time"><i class="fa fa-circle-o-notch"></i> 此处问必填内容</span>
         <h3 class="timeline-header"><a href="#">品牌介绍</a> 内容编辑</h3>
         <div class="timeline-body">
             <div class="wrapper-content">
@@ -39,24 +34,25 @@
     </div>
 </li>
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;"> {{Form::label('jmxqtitle', '加盟详情标题', array('class' => 'control-label'))}}</a>
+            {{Form::text('jmxqtitle', null, array('class' => 'form-control','id'=>'jmxqtitle','placeholder'=>'加盟详情标题'))}}
+        </h3>
+    </div>
+</li>
+<li>
     <i class="fa fa-tags bg-maroon"></i>
-
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
         <h3 class="timeline-header"><a href="#">加盟详情</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('jmxqtitle', '加盟详情标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('jmxqtitle', null, array('class' => 'form-control col-md-10','id'=>'jmxqtitle','placeholder'=>'加盟详情标题'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
                                 <!-- 实例化编辑器 -->
                                 <script type="text/javascript">
@@ -91,26 +87,26 @@
     </div>
 </li>
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;"> {{Form::label('jmystitle', '加盟优势标题', array('class' => 'control-label'))}}</a>
+            {{Form::text('jmystitle', null, array('class' => 'form-control','id'=>'jmystitle','placeholder'=>'加盟优势标题'))}}
+        </h3>
+    </div>
+</li>
+<li>
     <i class="fa fa-tags bg-maroon"></i>
-
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
         <h3 class="timeline-header"><a href="#">加盟优势</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('jmystitle', '加盟优势标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('jmystitle', null, array('class' => 'form-control col-md-10','id'=>'jmystitle','placeholder'=>'品牌介绍标题'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
-
                                 <script type="text/javascript">
                                     var ue3 = UE.getEditor('container3',{
                                         toolbars: [
@@ -134,7 +130,6 @@
                                         {!! $articleinfos->jmys_content !!}
                                     @endif
                                 </script>
-
                             </div>
                         </div>
                     </div>
@@ -144,26 +139,26 @@
     </div>
 </li>
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;"> {{Form::label('jmlctitle', '加盟流程标题', array('class' => 'control-label'))}}</a>
+            {{Form::text('jmlctitle', null, array('class' => 'form-control','id'=>'jmlctitle','placeholder'=>'加盟流程标题'))}}
+        </h3>
+    </div>
+</li>
+<li>
     <i class="fa fa-tags bg-maroon"></i>
-
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
         <h3 class="timeline-header"><a href="#">加盟流程</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('jmlctitle', '加盟流程标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('jmlctitle', null, array('class' => 'form-control col-md-10','id'=>'jmlctitle','placeholder'=>'加盟流程标题'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
-
                                 <script type="text/javascript">
                                     var ue4 = UE.getEditor('container4',{
                                         toolbars: [
@@ -187,7 +182,6 @@
                                         {!! $articleinfos->jmlc_content !!}
                                     @endif
                                 </script>
-
                             </div>
                         </div>
                     </div>
@@ -197,26 +191,26 @@
     </div>
 </li>
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;"> {{Form::label('jmzctitle', '开店要求', array('class' => 'control-label'))}}</a>
+            {{Form::text('jmzctitle', null, array('class' => 'form-control','id'=>'jmzctitle','placeholder'=>'开店要求'))}}
+        </h3>
+    </div>
+</li>
+<li>
     <i class="fa fa-tags bg-maroon"></i>
-
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
         <h3 class="timeline-header"><a href="#">开店要求</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('jmzctitle', '开店要求', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('jmzctitle', null, array('class' => 'form-control col-md-10','id'=>'jmzctitle','placeholder'=>'开店要求'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
-
                                 <script type="text/javascript">
                                     var ue5 = UE.getEditor('container5',{
                                         toolbars: [
@@ -240,7 +234,6 @@
                                         {!! $articleinfos->jmzc_content !!}
                                     @endif
                                 </script>
-
                             </div>
                         </div>
                     </div>
@@ -250,26 +243,26 @@
     </div>
 </li>
 <li>
+    <i class="fa fa-user bg-aqua"></i>
+    <div class="timeline-item">
+        <span class="time"><i class="fa fa-edit"></i>标题可留空，填写后为自定义标题</span>
+        <h3 class="timeline-header no-border">
+            <a href="#" style="display:inline-block;">{{Form::label('jmasktitle', '开店问答标题', array('class' => 'control-label'))}}</a>
+            {{Form::text('jmasktitle', null, array('class' => 'form-control','id'=>'jmasktitle','placeholder'=>'开店问答标题'))}}
+        </h3>
+    </div>
+</li>
+<li>
     <i class="fa fa-tags bg-maroon"></i>
-
     <div class="timeline-item">
         <span class="time"><i class="fa fa-clock-o"></i> {{date('H:m:s')}}</span>
-
         <h3 class="timeline-header"><a href="#">开店必看</a> 内容编辑</h3>
-        <div class="form-group col-md-10" style="margin: 5px;">
-            {{Form::label('jmasktitle', '加盟问答标题', array('class' => 'control-label col-md-2 col-sm-3 col-xs-12','style'=>'padding-top:5px;'))}}
-            <div class="col-md-8 col-sm-9 col-xs-12">
-                {{Form::text('jmasktitle', null, array('class' => 'form-control col-md-10','id'=>'jmasktitle','placeholder'=>'加盟问答标题'))}}
-            </div>
-        </div>
         <div class="timeline-body">
             <div class="wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
-
                             <div class="ibox-content no-padding">
-
                                 <script type="text/javascript">
                                     var ue6 = UE.getEditor('container6',{
                                         toolbars: [
